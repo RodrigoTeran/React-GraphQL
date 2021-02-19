@@ -1,0 +1,77 @@
+@import "./mixins";
+@import "./messageList";
+@import "./messageForm";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding-bottom: 60px;
+}
+.navbar {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+  font-size: 1.2rem;
+  @include flex-center;
+  svg {
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+  }
+  svg,
+  &-left-container a,
+  &-right-container a {
+    &:active {
+      color: rgb(134, 134, 134);
+      fill: rgb(134, 134, 134);
+    }
+  }
+  &-left-container,
+  &-right-container {
+    width: 50%;
+    height: 100%;
+    a {
+      color: #fff;
+      text-decoration: none;
+      @include flex-center();
+    }
+  }
+  &-left-container {
+    @include flex-center($justify: flex-start);
+    padding-left: 20px;
+    div {
+      margin-right: 10px;
+    }
+  }
+  &-right-container {
+    @include flex-center($justify: flex-end);
+    padding-right: 20px;
+    div {
+      margin-left: 10px;
+    }
+  }
+}
+.container-page {
+  width: 100%;
+  margin-top: 30px;
+  @include flex-center;
+  flex-direction: column;
+}
+.loader,
+.error {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.error {
+  color: rgb(209, 29, 29);
+}
